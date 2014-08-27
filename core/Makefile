@@ -1325,7 +1325,8 @@ name := $(TARGET_PRODUCT)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
 endif
-name := $(name)-ota-$(FILE_NAME_TAG)
+date := $(shell date -u +%Y%m%d)
+name := b2g-$(date)-$(name)
 
 ifeq ($(TARGET_HAS_FOTA),true)
   fota := 1
